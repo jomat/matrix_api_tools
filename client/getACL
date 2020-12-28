@@ -4,7 +4,7 @@
 # ./getACL chat.example.com roomid:example.com
 # https://matrix.org/docs/spec/client_server/latest#m-room-server-acl
 
-. ../credentials
+. ../config.sh
 
 getACL() {
     curl -H "Authorization: Bearer $accessToken" \

@@ -4,7 +4,7 @@
 # ./deleteRoom room:id
 # https://github.com/matrix-org/synapse/blob/master/docs/admin_api/rooms.md#delete-room-api
 
-. ../credentials
+. ../config.sh
 
 deleteRoom() {
     curl -H "Authorization: Bearer $accessToken" \

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# rename this file to "credentials"
+# rename this file to "config.sh"
 
 matrixServer="chat.example.com"
 matrixServerPort="8448"

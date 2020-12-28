@@ -4,7 +4,7 @@
 # ./whois @user:example.com
 # https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-admin-whois-userid
 
-. ../credentials
+. ../config.sh
 
 whois() {
     curl -H "Authorization: Bearer $accessToken" \

@@ -4,7 +4,7 @@
 # ./shutdownRoom room:id
 # https://github.com/matrix-org/synapse/blob/master/docs/admin_api/shutdown_room.md
 
-. ../credentials
+. ../config.sh
 
 shutdownRoom() {
     curl -H "Authorization: Bearer $accessToken" \

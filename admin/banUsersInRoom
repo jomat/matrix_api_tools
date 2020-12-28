@@ -3,7 +3,7 @@
 # Usage
 # ./banUsersInRoom room:id
 
-. ../credentials
+. ../config.sh
 . ./getUsers
 . ./banUser
 

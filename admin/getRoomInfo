@@ -4,7 +4,7 @@
 # ./getRoomInfo room:id
 # https://github.com/matrix-org/synapse/blob/master/docs/admin_api/rooms.md#draft-room-details-api
 
-. ../credentials
+. ../config.sh
 
 getRoomInfo() {
     curl -H "Authorization: Bearer $accessToken" \

@@ -4,7 +4,7 @@
 # ./findRoom {{ search term }}
 # https://github.com/matrix-org/synapse/blob/master/docs/admin_api/rooms.md#usage
 
-. ../credentials
+. ../config.sh
 
 findRoom() {
     curl -H "Authorization: Bearer $accessToken" \

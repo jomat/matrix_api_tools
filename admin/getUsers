@@ -4,7 +4,7 @@
 # ./getUsers room:id
 # https://github.com/matrix-org/synapse/blob/master/docs/admin_api/rooms.md#room-members-api
 
-. ../credentials
+. ../config.sh
 
 getUsers() {
     curl -H "Authorization: Bearer $accessToken" \

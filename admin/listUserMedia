@@ -4,7 +4,7 @@
 # ./listUserMedia @user:example.com
 # https://github.com/matrix-org/synapse/blob/v1.24.0/docs/admin_api/user_admin_api.rst#list-media-of-an-user
 
-. ../credentials
+. ../config.sh
 
 listUserMedia() {
     curl -H "Authorization: Bearer $accessToken" \

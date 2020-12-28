@@ -4,7 +4,7 @@
 # ./getVersion chat.example.com
 # https://matrix.org/docs/spec/client_server/latest#get-matrix-client-versions
 
-. ../credentials
+. ../config.sh
 
 getVersion() {
     curl -X GET 'https://'"$1":"$matrixServerPort"'/_matrix/federation/v1/version'

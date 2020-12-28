@@ -4,7 +4,7 @@
 # ./joined_members '!roomid:example.com'
 # https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-rooms-roomid-joined-members
 
-. ../credentials
+. ../config.sh
 
 joined_members() {
     curl -H "Authorization: Bearer $accessToken" \
