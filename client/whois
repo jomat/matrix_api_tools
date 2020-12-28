@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Usage
+# ./whois @user:example.com
+# https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-admin-whois-userid
+
+. ../credentials
+
+whois() {
+    curl -H "Authorization: Bearer $accessToken" \
+         -X GET 'https://'"$matrixServer":"$matrixServerPort"'/_matrix/client/r0/admin/whois/'"$1"|jq .
+}
+whois "$1"
