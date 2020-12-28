@@ -5,5 +5,6 @@ These scripts are just reminders of how to use the
 requests and some [client](https://matrix.org/docs/spec/client_server/latest)
 based requests.
 
-Only requirement is on [`jq`](https://stedolan.github.io/jq) to parse
-JSON data.
+## Requirements
+  * [`curl`](https://curl.se)
+  * [`jq`](https://stedolan.github.io/jq) to parse JSON data.
