@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Usage
+# ./joined_members '!roomid:example.com'
+# https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-rooms-roomid-joined-members
+
+. ../credentials
+
+joined_members() {
+    curl -H "Authorization: Bearer $accessToken" \
+         -X GET 'https://'"$matrixServer":"$matrixServerPort"'/_matrix/client/r0/rooms/'"$1"'/joined_members'|jq .
+}
+joined_members "$1"
