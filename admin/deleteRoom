@@ -7,7 +7,8 @@
 . ../config.sh
 
 deleteRoom() {
-    curl -H "Authorization: Bearer $accessToken" \
+    curl ${CURLOPTS_ADMIN} \
+         -H "${MATRIX_ADMIN_AUTH_HEADERNAME}: Bearer $accessToken" \
          --data '{ "new_room_user_id": "'$admin'", "room_name": "Content Violation Notification", "message": "A room you were in has been shutdown due to content violations on this server. Please review our Terms of Service.", "block": true, "purge": true }' \
          -X POST 'https://'"$matrixServer":"$matrixServerPort"'/_synapse/admin/v1/rooms/%21'"$1"'/delete'
 }

@@ -7,7 +7,8 @@
 . ../config.sh
 
 findRoom() {
-    curl -H "Authorization: Bearer $accessToken" \
+    curl ${CURLOPTS_ADMIN} \
+         -H "${MATRIX_ADMIN_AUTH_HEADERNAME}: Bearer $accessToken" \
          -X GET 'https://'"$matrixServer":"$matrixServerPort"'/_synapse/admin/v1/rooms?search_term='"$1"''
 }
 findRoom "$1"

@@ -7,7 +7,8 @@
 . ../config.sh
 
 listUserMembership() {
-    curl -H "Authorization: Bearer $accessToken" \
+    curl ${CURLOPTS_ADMIN} \
+         -H "${MATRIX_ADMIN_AUTH_HEADERNAME}: Bearer $accessToken" \
          -X GET 'https://'"$matrixServer":"$matrixServerPort"'/_synapse/admin/v1/users/%40'"$1"'/joined_rooms'
 }
 listUserMembership "$1"
