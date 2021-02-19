@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Usage
+# ./getEventReports
+# https://github.com/matrix-org/synapse/blob/develop/docs/admin_api/event_reports.md
+#
+# Notes
+# Must specify a user agent for this one:
+# https://github.com/matrix-org/python-canonicaljson/issues/33 h
+
+. ../config.sh
+
+getEventReports() {
+    curl ${CURLOPTS_ADMIN} \
+         -H "${MATRIX_ADMIN_AUTH_HEADERNAME}: Bearer $accessToken" \
+         -A 'Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0' \
+         -X GET 'https://'"$matrixServer":"$matrixServerPort"'/_synapse/admin/v1/event_reports?from=0&limit=100' | jq -r
+}
+getEventReports

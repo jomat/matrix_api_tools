@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Usage
+# ./getEventReport reportid
+#
+. ../config.sh
+
+getEventReport() {
+    curl ${CURLOPTS_ADMIN} \
+         -H "${MATRIX_ADMIN_AUTH_HEADERNAME}: Bearer $accessToken" \
+         -X GET 'https://'"$matrixServer":"$matrixServerPort"'/_synapse/admin/v1/event_reports/'"$1"''|jq .
+}
+getEventReport "$1"
