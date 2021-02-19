@@ -11,8 +11,9 @@
 . ../config.sh
 
 getRooms() {
-    curl -A 'Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0' \
-         -H "Authorization: Bearer $accessToken" \
+    curl ${CURLOPTS_ADMIN} \
+         -H "${MATRIX_ADMIN_AUTH_HEADERNAME}: Bearer $accessToken" \
+         -A 'Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0' \
          -X GET 'https://'"$matrixServer":"$matrixServerPort"'/_synapse/admin/v1/rooms?order_by=size' | jq -r
 }
 getRooms
