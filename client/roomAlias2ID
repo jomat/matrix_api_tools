@@ -4,7 +4,7 @@
 
 roomAlias2ID() {
     ROOM=$(echo $1|sed 's/^#/%23/')
-    curl -s -H "Authorization: Bearer $accessToken" \
+    curl -s \
          -X GET 'https://'"$matrixServer":"$matrixServerPort"'/_matrix/client/r0/directory/room/'"$ROOM"|jq .
 }
 roomAlias2ID "$1"
